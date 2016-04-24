@@ -28,16 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.exitTSBtn = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.loadFileTSBtn = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.compileTSBtn = new System.Windows.Forms.ToolStripButton();
-            this.comNRunTSBtn = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
-            this.settingTSBtn = new System.Windows.Forms.ToolStripButton();
-            this.aboutTSBtn = new System.Windows.Forms.ToolStripButton();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.loadingProg = new System.Windows.Forms.ToolStripProgressBar();
             this.statusText = new System.Windows.Forms.ToolStripStatusLabel();
@@ -51,12 +46,18 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.consoleText = new System.Windows.Forms.RichTextBox();
             this.toolStrip2 = new System.Windows.Forms.ToolStrip();
-            this.lookupTSBtn = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
-            this.deleteTSBtn = new System.Windows.Forms.ToolStripButton();
             this.splitContainer4 = new System.Windows.Forms.SplitContainer();
             this.stackList = new System.Windows.Forms.ListView();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.lookupTSBtn = new System.Windows.Forms.ToolStripButton();
+            this.deleteTSBtn = new System.Windows.Forms.ToolStripButton();
+            this.exitTSBtn = new System.Windows.Forms.ToolStripButton();
+            this.loadFileTSBtn = new System.Windows.Forms.ToolStripButton();
+            this.compileTSBtn = new System.Windows.Forms.ToolStripButton();
+            this.comNRunTSBtn = new System.Windows.Forms.ToolStripButton();
+            this.settingTSBtn = new System.Windows.Forms.ToolStripButton();
+            this.aboutTSBtn = new System.Windows.Forms.ToolStripButton();
             this.toolStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -99,73 +100,20 @@
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
             // 
-            // exitTSBtn
-            // 
-            this.exitTSBtn.Image = global::CodeAdvisor.Properties.Resources.gnome_panel_force_quit;
-            this.exitTSBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.exitTSBtn.Name = "exitTSBtn";
-            this.exitTSBtn.Size = new System.Drawing.Size(45, 22);
-            this.exitTSBtn.Text = "Exit";
-            this.exitTSBtn.Click += new System.EventHandler(this.exitTSBtn_Click);
-            // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
-            // 
-            // loadFileTSBtn
-            // 
-            this.loadFileTSBtn.Image = global::CodeAdvisor.Properties.Resources.generic_folder;
-            this.loadFileTSBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.loadFileTSBtn.Name = "loadFileTSBtn";
-            this.loadFileTSBtn.Size = new System.Drawing.Size(74, 22);
-            this.loadFileTSBtn.Text = "Load File";
-            this.loadFileTSBtn.Click += new System.EventHandler(this.loadFileTSBtn_Click);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
             this.toolStripSeparator2.Size = new System.Drawing.Size(6, 25);
             // 
-            // compileTSBtn
-            // 
-            this.compileTSBtn.Image = global::CodeAdvisor.Properties.Resources.exec;
-            this.compileTSBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.compileTSBtn.Name = "compileTSBtn";
-            this.compileTSBtn.Size = new System.Drawing.Size(72, 22);
-            this.compileTSBtn.Text = "Compile";
-            this.compileTSBtn.Click += new System.EventHandler(this.compileTSBtn_Click);
-            // 
-            // comNRunTSBtn
-            // 
-            this.comNRunTSBtn.Image = global::CodeAdvisor.Properties.Resources.documents_yellow_exec;
-            this.comNRunTSBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.comNRunTSBtn.Name = "comNRunTSBtn";
-            this.comNRunTSBtn.Size = new System.Drawing.Size(109, 22);
-            this.comNRunTSBtn.Text = "Compile && Run";
-            this.comNRunTSBtn.Click += new System.EventHandler(this.comNRunTSBtn_Click);
-            // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
             this.toolStripSeparator3.Size = new System.Drawing.Size(6, 25);
-            // 
-            // settingTSBtn
-            // 
-            this.settingTSBtn.Image = global::CodeAdvisor.Properties.Resources.advancedsettings;
-            this.settingTSBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.settingTSBtn.Name = "settingTSBtn";
-            this.settingTSBtn.Size = new System.Drawing.Size(69, 22);
-            this.settingTSBtn.Text = "Settings";
-            // 
-            // aboutTSBtn
-            // 
-            this.aboutTSBtn.Image = global::CodeAdvisor.Properties.Resources.dialog_question;
-            this.aboutTSBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.aboutTSBtn.Name = "aboutTSBtn";
-            this.aboutTSBtn.Size = new System.Drawing.Size(76, 22);
-            this.aboutTSBtn.Text = "About Us";
-            this.aboutTSBtn.Click += new System.EventHandler(this.aboutTSBtn_Click);
             // 
             // statusStrip1
             // 
@@ -321,28 +269,10 @@
             this.toolStrip2.TabIndex = 0;
             this.toolStrip2.Text = "toolStrip2";
             // 
-            // lookupTSBtn
-            // 
-            this.lookupTSBtn.Image = global::CodeAdvisor.Properties.Resources.find;
-            this.lookupTSBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.lookupTSBtn.Name = "lookupTSBtn";
-            this.lookupTSBtn.Size = new System.Drawing.Size(71, 22);
-            this.lookupTSBtn.Text = "Look Up";
-            this.lookupTSBtn.Click += new System.EventHandler(this.lookupTSBtn_Click);
-            // 
             // toolStripSeparator4
             // 
             this.toolStripSeparator4.Name = "toolStripSeparator4";
             this.toolStripSeparator4.Size = new System.Drawing.Size(6, 25);
-            // 
-            // deleteTSBtn
-            // 
-            this.deleteTSBtn.Image = global::CodeAdvisor.Properties.Resources.edit_clear;
-            this.deleteTSBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.deleteTSBtn.Name = "deleteTSBtn";
-            this.deleteTSBtn.Size = new System.Drawing.Size(54, 22);
-            this.deleteTSBtn.Text = "Clear";
-            this.deleteTSBtn.Click += new System.EventHandler(this.deleteTSBtn_Click);
             // 
             // splitContainer4
             // 
@@ -373,6 +303,77 @@
             this.openFileDialog1.FileName = "openFileDialog1";
             this.openFileDialog1.Filter = "Java files (*.java)|*.java|All files (*.*)|*.*";
             // 
+            // lookupTSBtn
+            // 
+            this.lookupTSBtn.Image = global::CodeAdvisor.Properties.Resources.find;
+            this.lookupTSBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.lookupTSBtn.Name = "lookupTSBtn";
+            this.lookupTSBtn.Size = new System.Drawing.Size(71, 22);
+            this.lookupTSBtn.Text = "Look Up";
+            this.lookupTSBtn.Click += new System.EventHandler(this.lookupTSBtn_Click);
+            // 
+            // deleteTSBtn
+            // 
+            this.deleteTSBtn.Image = global::CodeAdvisor.Properties.Resources.edit_clear;
+            this.deleteTSBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.deleteTSBtn.Name = "deleteTSBtn";
+            this.deleteTSBtn.Size = new System.Drawing.Size(54, 22);
+            this.deleteTSBtn.Text = "Clear";
+            this.deleteTSBtn.Click += new System.EventHandler(this.deleteTSBtn_Click);
+            // 
+            // exitTSBtn
+            // 
+            this.exitTSBtn.Image = global::CodeAdvisor.Properties.Resources.gnome_panel_force_quit;
+            this.exitTSBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.exitTSBtn.Name = "exitTSBtn";
+            this.exitTSBtn.Size = new System.Drawing.Size(45, 22);
+            this.exitTSBtn.Text = "Exit";
+            this.exitTSBtn.Click += new System.EventHandler(this.exitTSBtn_Click);
+            // 
+            // loadFileTSBtn
+            // 
+            this.loadFileTSBtn.Image = global::CodeAdvisor.Properties.Resources.generic_folder;
+            this.loadFileTSBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.loadFileTSBtn.Name = "loadFileTSBtn";
+            this.loadFileTSBtn.Size = new System.Drawing.Size(74, 22);
+            this.loadFileTSBtn.Text = "Load File";
+            this.loadFileTSBtn.Click += new System.EventHandler(this.loadFileTSBtn_Click);
+            // 
+            // compileTSBtn
+            // 
+            this.compileTSBtn.Image = global::CodeAdvisor.Properties.Resources.exec;
+            this.compileTSBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.compileTSBtn.Name = "compileTSBtn";
+            this.compileTSBtn.Size = new System.Drawing.Size(72, 22);
+            this.compileTSBtn.Text = "Compile";
+            this.compileTSBtn.Click += new System.EventHandler(this.compileTSBtn_Click);
+            // 
+            // comNRunTSBtn
+            // 
+            this.comNRunTSBtn.Image = global::CodeAdvisor.Properties.Resources.documents_yellow_exec;
+            this.comNRunTSBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.comNRunTSBtn.Name = "comNRunTSBtn";
+            this.comNRunTSBtn.Size = new System.Drawing.Size(109, 22);
+            this.comNRunTSBtn.Text = "Compile && Run";
+            this.comNRunTSBtn.Click += new System.EventHandler(this.comNRunTSBtn_Click);
+            // 
+            // settingTSBtn
+            // 
+            this.settingTSBtn.Image = global::CodeAdvisor.Properties.Resources.advancedsettings;
+            this.settingTSBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.settingTSBtn.Name = "settingTSBtn";
+            this.settingTSBtn.Size = new System.Drawing.Size(69, 22);
+            this.settingTSBtn.Text = "Settings";
+            // 
+            // aboutTSBtn
+            // 
+            this.aboutTSBtn.Image = global::CodeAdvisor.Properties.Resources.dialog_question;
+            this.aboutTSBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.aboutTSBtn.Name = "aboutTSBtn";
+            this.aboutTSBtn.Size = new System.Drawing.Size(76, 22);
+            this.aboutTSBtn.Text = "About Us";
+            this.aboutTSBtn.Click += new System.EventHandler(this.aboutTSBtn_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -381,6 +382,7 @@
             this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.toolStrip1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainForm";
             this.Text = "Code Avisor v1.0";
             this.toolStrip1.ResumeLayout(false);

@@ -153,6 +153,26 @@ namespace CodeAdvisor.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap text_x_csharp {
+            get {
+                object obj = ResourceManager.GetObject("text_x_csharp", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        /// </summary>
+        internal static System.Drawing.Icon text_x_csharp1 {
+            get {
+                object obj = ResourceManager.GetObject("text_x_csharp1", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap text_x_java {
             get {
                 object obj = ResourceManager.GetObject("text_x_java", resourceCulture);
