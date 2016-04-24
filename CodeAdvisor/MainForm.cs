@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CodeAdvisor.Supports;
 
 namespace CodeAdvisor
 {
@@ -30,6 +31,14 @@ namespace CodeAdvisor
             if (dRes == DialogResult.OK)
             {
                 String javaFile = openFileDialog1.FileName;
+                ListViewItem fileListItem = Utils.addFileItem(javaFile);
+                if (fileListItem == null)
+                {
+                    MessageBox.Show(this, "this file was already added", Properties.Resources.APP_NAME, MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                    return;
+                }
+                fileListItem.ImageIndex = 0;
+                fileList.Items.Add(fileListItem);
             }
         }
 
@@ -45,7 +54,7 @@ namespace CodeAdvisor
 
         private void aboutTSBtn_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(this, "This application is made by Minh & Daehyeok @ ASSL USU", "About Us", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show(this, "this application is made by Minh & Daehyeok @ ASSL", Properties.Resources.APP_NAME, MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void lookupTSBtn_Click(object sender, EventArgs e)
@@ -58,6 +67,38 @@ namespace CodeAdvisor
 
         }
 
+        private void fileList_DoubleClick(object sender, EventArgs e)
+        {
+            string filePath = (string) fileList.SelectedItems[0].Tag;
+            Utils.addTab(editorTab, filePath);
+        }
+
         #endregion
+
+        #region Context Menu Events
+
+        private void openToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            fileList_DoubleClick(sender, e);
+        }
+
+        private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void toolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Utils.removeTab(editorTab);
+        }
+
+        private void closeAllToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Utils.removeAllTabs(editorTab);
+        }
+
+        #endregion
+
+
     }
 }
