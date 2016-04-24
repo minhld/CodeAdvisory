@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using CodeAdvisor.Supports;
+using System.Diagnostics;
 
 namespace CodeAdvisor
 {
@@ -19,6 +20,14 @@ namespace CodeAdvisor
         }
 
         #region Event Handlers
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            // temporarily set for testing only
+            JavaUtils.ProcessDataAvailable += JavaUtils_ProcessDataAvailable;
+            JavaUtils.initJavaUtils(@"C:\Program Files\Java\jdk1.7.0_79\bin");
+            
+        }
 
         private void exitTSBtn_Click(object sender, EventArgs e)
         {
@@ -49,7 +58,28 @@ namespace CodeAdvisor
 
         private void comNRunTSBtn_Click(object sender, EventArgs e)
         {
+            string javaFilePath = (string)editorTab.SelectedTab.Tag;
+            JavaUtils.compile(javaFilePath);
+            
+        }
 
+        private void JavaUtils_ProcessDataAvailable(object sender, EventArgs e)
+        {
+            DataReceivedEventArgs de = (DataReceivedEventArgs)e;
+            appendConsole(de.Data);
+        }
+
+        void appendConsole(string value)
+        {
+
+            if (consoleText.InvokeRequired)
+            {
+                consoleText.Invoke(new MethodInvoker(delegate {
+                    consoleText.Text += value;
+                }));
+                return;
+            }
+            consoleText.Text += value;
         }
 
         private void aboutTSBtn_Click(object sender, EventArgs e)
@@ -97,8 +127,9 @@ namespace CodeAdvisor
             Utils.removeAllTabs(editorTab);
         }
 
+
         #endregion
 
-
+        
     }
 }

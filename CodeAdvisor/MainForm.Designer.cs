@@ -104,7 +104,7 @@
             this.aboutTSBtn});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1552, 27);
+            this.toolStrip1.Size = new System.Drawing.Size(1262, 27);
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -182,10 +182,10 @@
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.loadingProg,
             this.statusText});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 853);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 691);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Padding = new System.Windows.Forms.Padding(1, 0, 19, 0);
-            this.statusStrip1.Size = new System.Drawing.Size(1552, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(1262, 22);
             this.statusStrip1.TabIndex = 1;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -216,8 +216,8 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.splitContainer2);
-            this.splitContainer1.Size = new System.Drawing.Size(1552, 826);
-            this.splitContainer1.SplitterDistance = 235;
+            this.splitContainer1.Size = new System.Drawing.Size(1262, 664);
+            this.splitContainer1.SplitterDistance = 191;
             this.splitContainer1.SplitterWidth = 5;
             this.splitContainer1.TabIndex = 2;
             // 
@@ -232,8 +232,8 @@
             // splitContainer5.Panel1
             // 
             this.splitContainer5.Panel1.Controls.Add(this.fileList);
-            this.splitContainer5.Size = new System.Drawing.Size(235, 826);
-            this.splitContainer5.SplitterDistance = 408;
+            this.splitContainer5.Size = new System.Drawing.Size(191, 664);
+            this.splitContainer5.SplitterDistance = 327;
             this.splitContainer5.SplitterWidth = 5;
             this.splitContainer5.TabIndex = 0;
             // 
@@ -246,7 +246,7 @@
             this.fileList.Margin = new System.Windows.Forms.Padding(4);
             this.fileList.MultiSelect = false;
             this.fileList.Name = "fileList";
-            this.fileList.Size = new System.Drawing.Size(235, 408);
+            this.fileList.Size = new System.Drawing.Size(191, 327);
             this.fileList.SmallImageList = this.mainImageList;
             this.fileList.TabIndex = 1;
             this.fileList.UseCompatibleStateImageBehavior = false;
@@ -299,8 +299,8 @@
             // splitContainer2.Panel2
             // 
             this.splitContainer2.Panel2.Controls.Add(this.splitContainer4);
-            this.splitContainer2.Size = new System.Drawing.Size(1312, 826);
-            this.splitContainer2.SplitterDistance = 710;
+            this.splitContainer2.Size = new System.Drawing.Size(1066, 664);
+            this.splitContainer2.SplitterDistance = 653;
             this.splitContainer2.SplitterWidth = 5;
             this.splitContainer2.TabIndex = 0;
             // 
@@ -320,8 +320,8 @@
             // 
             this.splitContainer3.Panel2.Controls.Add(this.consoleText);
             this.splitContainer3.Panel2.Controls.Add(this.toolStrip2);
-            this.splitContainer3.Size = new System.Drawing.Size(710, 826);
-            this.splitContainer3.SplitterDistance = 526;
+            this.splitContainer3.Size = new System.Drawing.Size(653, 664);
+            this.splitContainer3.SplitterDistance = 422;
             this.splitContainer3.SplitterWidth = 5;
             this.splitContainer3.TabIndex = 0;
             // 
@@ -333,17 +333,18 @@
             this.editorTab.Margin = new System.Windows.Forms.Padding(4);
             this.editorTab.Name = "editorTab";
             this.editorTab.SelectedIndex = 0;
-            this.editorTab.Size = new System.Drawing.Size(710, 526);
+            this.editorTab.Size = new System.Drawing.Size(653, 422);
             this.editorTab.TabIndex = 0;
             // 
             // consoleText
             // 
             this.consoleText.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.consoleText.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.consoleText.Font = new System.Drawing.Font("Courier New", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.consoleText.Location = new System.Drawing.Point(0, 27);
             this.consoleText.Margin = new System.Windows.Forms.Padding(4);
             this.consoleText.Name = "consoleText";
-            this.consoleText.Size = new System.Drawing.Size(710, 268);
+            this.consoleText.Size = new System.Drawing.Size(653, 210);
             this.consoleText.TabIndex = 1;
             this.consoleText.Text = "";
             // 
@@ -356,7 +357,7 @@
             this.deleteTSBtn});
             this.toolStrip2.Location = new System.Drawing.Point(0, 0);
             this.toolStrip2.Name = "toolStrip2";
-            this.toolStrip2.Size = new System.Drawing.Size(710, 27);
+            this.toolStrip2.Size = new System.Drawing.Size(653, 27);
             this.toolStrip2.TabIndex = 0;
             this.toolStrip2.Text = "toolStrip2";
             // 
@@ -394,8 +395,8 @@
             // splitContainer4.Panel1
             // 
             this.splitContainer4.Panel1.Controls.Add(this.stackList);
-            this.splitContainer4.Size = new System.Drawing.Size(597, 826);
-            this.splitContainer4.SplitterDistance = 344;
+            this.splitContainer4.Size = new System.Drawing.Size(408, 664);
+            this.splitContainer4.SplitterDistance = 276;
             this.splitContainer4.SplitterWidth = 5;
             this.splitContainer4.TabIndex = 0;
             // 
@@ -405,8 +406,9 @@
             this.stackList.Dock = System.Windows.Forms.DockStyle.Fill;
             this.stackList.Location = new System.Drawing.Point(0, 0);
             this.stackList.Margin = new System.Windows.Forms.Padding(4);
+            this.stackList.MinimumSize = new System.Drawing.Size(410, 360);
             this.stackList.Name = "stackList";
-            this.stackList.Size = new System.Drawing.Size(597, 344);
+            this.stackList.Size = new System.Drawing.Size(410, 360);
             this.stackList.TabIndex = 1;
             this.stackList.UseCompatibleStateImageBehavior = false;
             // 
@@ -444,14 +446,16 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1552, 875);
+            this.ClientSize = new System.Drawing.Size(1262, 713);
             this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.toolStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "MainForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Code Avisor v1.0";
+            this.Load += new System.EventHandler(this.MainForm_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.statusStrip1.ResumeLayout(false);
