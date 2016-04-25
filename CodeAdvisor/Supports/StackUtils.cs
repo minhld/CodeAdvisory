@@ -13,6 +13,18 @@ namespace CodeAdvisor.Supports
     {
         private static List<StackItem> stackItems = null;
 
+        public static List<StackItem> StackItem
+        {
+            set
+            {
+                stackItems = value;
+            }
+            get
+            {
+                return stackItems;
+            }
+        }
+
         public static void drawListItems(ListView parent)
         {
             ListViewItem listItem = null;
@@ -27,6 +39,10 @@ namespace CodeAdvisor.Supports
         public static void getStackItems(string jsonRes)
         {
             stackItems = new List<StackItem>();
+            
+            // no data parsed
+            if (jsonRes.Equals(string.Empty)) return;
+
             JObject stackObjects = (JObject)JsonConvert.DeserializeObject(jsonRes);
             var dataObjects = stackObjects["data"];
             List<JToken> questions = dataObjects.Children().ToList();

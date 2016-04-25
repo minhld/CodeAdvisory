@@ -14,24 +14,28 @@ namespace CodeAdvisor.Supports
     {
         public static string sendPost(string url, string jsonRequest)
         {
-            var request = (HttpWebRequest)WebRequest.Create(url);
+            try {
+                var request = (HttpWebRequest)WebRequest.Create(url);
 
-            var data = Encoding.ASCII.GetBytes(jsonRequest);
+                var data = Encoding.ASCII.GetBytes(jsonRequest);
 
-            request.Method = "POST";
-            request.ContentType = "application/json";
-            request.ContentLength = data.Length;
+                request.Method = "POST";
+                request.ContentType = "application/json";
+                request.ContentLength = data.Length;
 
-            using (var stream = request.GetRequestStream())
+                using (var stream = request.GetRequestStream())
+                {
+                    stream.Write(data, 0, data.Length);
+                }
+
+                var response = (HttpWebResponse)request.GetResponse();
+
+                var responseString = new StreamReader(response.GetResponseStream()).ReadToEnd();
+                return responseString;
+            }catch(Exception e)
             {
-                stream.Write(data, 0, data.Length);
+                return "";
             }
-
-            var response = (HttpWebResponse)request.GetResponse();
-
-            var responseString = new StreamReader(response.GetResponseStream()).ReadToEnd();
-            return responseString;
-
         }
 
         public static string parseException(string exMsg)

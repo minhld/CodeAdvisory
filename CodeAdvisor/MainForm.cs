@@ -19,6 +19,7 @@ namespace CodeAdvisor
 
         const int TAB_CONSOLE_IDX = 1;
         const int TAB_ERROR_IDX = 2;
+        const int TAB_REQUEST_IDX = 3;
 
         #endregion
 
@@ -47,37 +48,7 @@ namespace CodeAdvisor
 
 
         }
-
-        private void JavaUtils_ProcessDataAvailable(object sender, EventArgs e)
-        {
-            DataReceivedEventArgs de = (DataReceivedEventArgs)e;
-            if (de.Data == null || de.Data.Trim().Equals(string.Empty))
-            {
-                return;
-            }
-
-            this.BeginInvoke(new MethodInvoker(() =>
-            {
-                consoleText.AppendText(de.Data + "\n" ?? string.Empty);
-                consoleTabs.SelectedIndex = TAB_CONSOLE_IDX;
-            }));
-        }
-
-        private void JavaUtils_ProcessErrorAvailable(object sender, EventArgs e)
-        {
-            DataReceivedEventArgs de = (DataReceivedEventArgs)e;
-            if (de.Data == null || de.Data.Trim().Equals(string.Empty))
-            {
-                return;
-            }
-
-            this.BeginInvoke(new MethodInvoker(() =>
-            {
-                errorText.AppendText(de.Data + "\n" ?? string.Empty);
-                consoleTabs.SelectedIndex = TAB_ERROR_IDX;
-            }));
-        }
-
+        
         private void exitTSBtn_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show(this, "are you sure you want to quit?", Properties.Resources.APP_NAME, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
@@ -152,23 +123,14 @@ namespace CodeAdvisor
 
         private void lookupTSBtn_Click(object sender, EventArgs e)
         {
+            consoleTabs.SelectedIndex = TAB_REQUEST_IDX;
+            loadingProg.Visible = true;
+
             BackgroundWorker getStackWorker = new BackgroundWorker();
             getStackWorker.DoWork += GetStackWorker_DoWork;
             getStackWorker.RunWorkerCompleted += GetStackWorker_RunWorkerCompleted;
             getStackWorker.RunWorkerAsync(errorText.Text);
             
-        }
-
-        private void GetStackWorker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
-        {
-            StackUtils.drawListItems(stackList);
-        }
-
-        private void GetStackWorker_DoWork(object sender, DoWorkEventArgs e)
-        {
-            string reqJson = ExceptionUtils.parseException(e.Argument.ToString());
-            string resp = ExceptionUtils.sendPost(Properties.Resources.CONTACT_SERVER, reqJson);
-            StackUtils.getStackItems(resp);
         }
 
         private void deleteTSBtn_Click(object sender, EventArgs e)
@@ -196,6 +158,19 @@ namespace CodeAdvisor
             string editorText = Utils.getTextFromTab(javaFilePath);
             Utils.saveToFile(javaFilePath, editorText);
             statusText.Text = "saved!";
+        }
+
+        private void stackList_DoubleClick(object sender, EventArgs e)
+        {
+            ListViewItem selectedItem = stackList.SelectedItems[0];
+            StackItem stackItem = (StackItem)selectedItem.Tag;
+            questionWebView.DocumentText = stackItem.question;
+            answerWebView.DocumentText = stackItem.answer;
+            linkWebView.Url = new Uri(stackItem.qlink);
+            if (stackItem.answer.Trim().Equals(string.Empty))
+            {
+
+            }
         }
 
         #endregion
@@ -240,6 +215,58 @@ namespace CodeAdvisor
         }
 
         #endregion
-     
+
+        #region Worker Events
+
+        private void JavaUtils_ProcessDataAvailable(object sender, EventArgs e)
+        {
+            DataReceivedEventArgs de = (DataReceivedEventArgs)e;
+            if (de.Data == null || de.Data.Trim().Equals(string.Empty))
+            {
+                return;
+            }
+
+            this.BeginInvoke(new MethodInvoker(() =>
+            {
+                consoleText.AppendText(de.Data + "\n" ?? string.Empty);
+                consoleTabs.SelectedIndex = TAB_CONSOLE_IDX;
+            }));
+        }
+
+        private void JavaUtils_ProcessErrorAvailable(object sender, EventArgs e)
+        {
+            DataReceivedEventArgs de = (DataReceivedEventArgs)e;
+            if (de.Data == null || de.Data.Trim().Equals(string.Empty))
+            {
+                return;
+            }
+
+            this.BeginInvoke(new MethodInvoker(() =>
+            {
+                errorText.AppendText(de.Data + "\n" ?? string.Empty);
+                consoleTabs.SelectedIndex = TAB_ERROR_IDX;
+            }));
+        }
+
+        private void GetStackWorker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            loadingProg.Visible = false;
+            if (StackUtils.StackItem.Count == 0)
+            {
+                MessageBox.Show(this, "no item found. please check your server availability", Properties.Resources.APP_NAME, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+            StackUtils.drawListItems(stackList);
+        }
+
+        private void GetStackWorker_DoWork(object sender, DoWorkEventArgs e)
+        {
+            string reqJson = ExceptionUtils.parseException(e.Argument.ToString());
+            string resp = ExceptionUtils.sendPost(Properties.Resources.CONTACT_SERVER, reqJson);
+            StackUtils.getStackItems(resp);
+        }
+
+        #endregion
+        
     }
 }
