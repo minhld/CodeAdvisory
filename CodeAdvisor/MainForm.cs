@@ -76,7 +76,10 @@ namespace CodeAdvisor
 
         private void exitTSBtn_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            if (MessageBox.Show(this, "are you sure you want to quit?", Properties.Resources.APP_NAME, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
         }
 
         private void loadFileTSBtn_Click(object sender, EventArgs e)
