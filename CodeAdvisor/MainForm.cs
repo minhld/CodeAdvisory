@@ -22,10 +22,14 @@ namespace CodeAdvisor
 
         #endregion
 
+        #region Entry
+
         public MainForm()
         {
             InitializeComponent();
         }
+
+        #endregion
 
         #region Event Handlers
 
@@ -148,7 +152,7 @@ namespace CodeAdvisor
 
         private void lookupTSBtn_Click(object sender, EventArgs e)
         {
-
+            ExceptionUtils.parseException(errorText.Text);
         }
 
         private void deleteTSBtn_Click(object sender, EventArgs e)
@@ -205,7 +209,6 @@ namespace CodeAdvisor
 
         #endregion
 
-
         #region Support Functions
 
         public void printConsoleMessage(string info)
@@ -221,7 +224,6 @@ namespace CodeAdvisor
         }
 
         #endregion
-
-        
+     
     }
 }

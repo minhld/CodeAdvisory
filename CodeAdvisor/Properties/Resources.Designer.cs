@@ -170,7 +170,7 @@ namespace CodeAdvisor.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to C:\Program Files\Java\jdk1.8.0_60\bin.
+        ///   Looks up a localized string similar to C:\Program Files\Java\jdk1.7.0_79\bin.
         /// </summary>
         internal static string JDK_PATH {
             get {
