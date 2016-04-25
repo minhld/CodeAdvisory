@@ -130,9 +130,6 @@
   <data name="dialog_question" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\dialog_question.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="documents_yellow_exec" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\documents_yellow_exec.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="edit_clear" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\edit_clear.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -165,5 +162,14 @@
   </data>
   <data name="text_x_java" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\text_x_java.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="JDK_PATH" xml:space="preserve">
+    <value>C:\Program Files\Java\jdk1.8.0_60\bin</value>
+  </data>
+  <data name="save" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\save.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="start_here_gnome_blue" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\start_here_gnome_blue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

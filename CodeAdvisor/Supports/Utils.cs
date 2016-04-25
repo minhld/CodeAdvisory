@@ -85,5 +85,24 @@ namespace CodeAdvisor.Supports
             editorMap.Clear();
             parent.TabPages.Clear();
         }
+
+        public static string checkClassAvailable(string javaFilePath)
+        {
+            int offs = javaFilePath.LastIndexOf(".java");
+            string javaClassPath = javaFilePath.Substring(0, offs) + ".class";
+            return File.Exists(javaClassPath) ? javaClassPath : "";
+        }
+
+        public static string getTextFromTab(string fileAtTab)
+        {
+            RichTextBox editor = editorMap[fileAtTab];
+            return editor.Text;
+        }
+
+        public static bool saveToFile(string filePath, string text)
+        {
+            File.WriteAllText(filePath, text);
+            return true;
+        }
     }
 }

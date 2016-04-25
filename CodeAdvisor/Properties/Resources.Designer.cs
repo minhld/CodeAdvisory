@@ -102,16 +102,6 @@ namespace CodeAdvisor.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap documents_yellow_exec {
-            get {
-                object obj = ResourceManager.GetObject("documents_yellow_exec", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap edit_clear {
             get {
                 object obj = ResourceManager.GetObject("edit_clear", resourceCulture);
@@ -180,11 +170,40 @@ namespace CodeAdvisor.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to C:\Program Files\Java\jdk1.8.0_60\bin.
+        /// </summary>
+        internal static string JDK_PATH {
+            get {
+                return ResourceManager.GetString("JDK_PATH", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap no {
             get {
                 object obj = ResourceManager.GetObject("no", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap save {
+            get {
+                object obj = ResourceManager.GetObject("save", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap start_here_gnome_blue {
+            get {
+                object obj = ResourceManager.GetObject("start_here_gnome_blue", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

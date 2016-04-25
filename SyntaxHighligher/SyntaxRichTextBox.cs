@@ -199,7 +199,7 @@ namespace SyntaxHighlighter
                 m_rgList.Add(keywords[i]);
             }
 
-            m_color = Color.Brown;
+            m_color = Color.FromArgb(126, 78, 52);
         }
     }
 
