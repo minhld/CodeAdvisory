@@ -150,6 +150,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\gtk_refresh.png" />
+    <None Include="Resources\network_server.png" />
     <Content Include="Samples\test1.java" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

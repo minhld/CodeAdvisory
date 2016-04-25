@@ -40,6 +40,7 @@
             this.compileTSBtn = new System.Windows.Forms.ToolStripButton();
             this.comNRunTSBtn = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.checkServerTSBtn = new System.Windows.Forms.ToolStripButton();
             this.settingTSBtn = new System.Windows.Forms.ToolStripButton();
             this.aboutTSBtn = new System.Windows.Forms.ToolStripButton();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
@@ -65,6 +66,7 @@
             this.errorTabPage = new System.Windows.Forms.TabPage();
             this.errorText = new System.Windows.Forms.RichTextBox();
             this.requestTabPage = new System.Windows.Forms.TabPage();
+            this.requestText = new System.Windows.Forms.RichTextBox();
             this.toolStrip2 = new System.Windows.Forms.ToolStrip();
             this.lookupTSBtn = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
@@ -74,6 +76,10 @@
             this.author = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.question = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.score = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.qscore = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.accscore = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.apiscore = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.userreputation = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.questionTabs = new System.Windows.Forms.TabControl();
             this.questionTabPage = new System.Windows.Forms.TabPage();
             this.questionWebView = new System.Windows.Forms.WebBrowser();
@@ -84,11 +90,6 @@
             this.toolStrip3 = new System.Windows.Forms.ToolStrip();
             this.refreshStackLinkTSBtn = new System.Windows.Forms.ToolStripButton();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.requestText = new System.Windows.Forms.RichTextBox();
-            this.qscore = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.accscore = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.apiscore = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.userreputation = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.toolStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -137,6 +138,7 @@
             this.compileTSBtn,
             this.comNRunTSBtn,
             this.toolStripSeparator3,
+            this.checkServerTSBtn,
             this.settingTSBtn,
             this.aboutTSBtn});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
@@ -209,6 +211,15 @@
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
             this.toolStripSeparator3.Size = new System.Drawing.Size(6, 25);
+            // 
+            // checkServerTSBtn
+            // 
+            this.checkServerTSBtn.Image = global::CodeAdvisor.Properties.Resources.network_server;
+            this.checkServerTSBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.checkServerTSBtn.Name = "checkServerTSBtn";
+            this.checkServerTSBtn.Size = new System.Drawing.Size(95, 22);
+            this.checkServerTSBtn.Text = "Check Server";
+            this.checkServerTSBtn.Click += new System.EventHandler(this.checkServerTSBtn_Click);
             // 
             // settingTSBtn
             // 
@@ -483,6 +494,17 @@
             this.requestTabPage.Text = "Requests";
             this.requestTabPage.UseVisualStyleBackColor = true;
             // 
+            // requestText
+            // 
+            this.requestText.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.requestText.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.requestText.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.requestText.Location = new System.Drawing.Point(0, 0);
+            this.requestText.Name = "requestText";
+            this.requestText.Size = new System.Drawing.Size(505, 169);
+            this.requestText.TabIndex = 2;
+            this.requestText.Text = "";
+            // 
             // toolStrip2
             // 
             this.toolStrip2.ImageScalingSize = new System.Drawing.Size(20, 20);
@@ -572,6 +594,22 @@
             // score
             // 
             this.score.Text = "score";
+            // 
+            // qscore
+            // 
+            this.qscore.Text = "qscore";
+            // 
+            // accscore
+            // 
+            this.accscore.Text = "accepted";
+            // 
+            // apiscore
+            // 
+            this.apiscore.Text = "api";
+            // 
+            // userreputation
+            // 
+            this.userreputation.Text = "user-rep";
             // 
             // questionTabs
             // 
@@ -669,33 +707,6 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             this.openFileDialog1.Filter = "Java files (*.java)|*.java|All files (*.*)|*.*";
-            // 
-            // requestText
-            // 
-            this.requestText.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.requestText.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.requestText.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.requestText.Location = new System.Drawing.Point(0, 0);
-            this.requestText.Name = "requestText";
-            this.requestText.Size = new System.Drawing.Size(505, 169);
-            this.requestText.TabIndex = 2;
-            this.requestText.Text = "";
-            // 
-            // qscore
-            // 
-            this.qscore.Text = "qscore";
-            // 
-            // accscore
-            // 
-            this.accscore.Text = "accepted";
-            // 
-            // apiscore
-            // 
-            this.apiscore.Text = "api";
-            // 
-            // userreputation
-            // 
-            this.userreputation.Text = "user-rep";
             // 
             // MainForm
             // 
@@ -817,6 +828,7 @@
         private System.Windows.Forms.ColumnHeader accscore;
         private System.Windows.Forms.ColumnHeader apiscore;
         private System.Windows.Forms.ColumnHeader userreputation;
+        private System.Windows.Forms.ToolStripButton checkServerTSBtn;
     }
 }
 

@@ -168,6 +168,11 @@ namespace CodeAdvisor
             linkWebView.Url = new Uri(stackItem.qlink);
         }
 
+        private void checkServerTSBtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
         #endregion
 
         #region Context Menu Events
