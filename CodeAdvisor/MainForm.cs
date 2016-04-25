@@ -164,7 +164,7 @@ namespace CodeAdvisor
             StackItem stackItem = (StackItem)selectedItem.Tag;
             questionWebView.DocumentText = stackItem.question;
             answerWebView.DocumentText = stackItem.answer;
-            answerTabPage.Text = Properties.Resources.TAB_ANSWER + (stackItem.answer.Trim().Equals(string.Empty) ? " (0)" : " (1)");
+            answerTabPage.Text = Properties.Resources.TAB_ANSWER + (stackItem.answer.Equals(string.Empty) ? " (0)" : " (1)");
             linkWebView.Url = new Uri(stackItem.qlink);
         }
 

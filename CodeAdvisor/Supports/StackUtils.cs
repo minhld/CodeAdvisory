@@ -33,6 +33,7 @@ namespace CodeAdvisor.Supports
             {
                 listItem = new ListViewItem(new [] { stackItems[i].author,
                                                     stackItems[i].title,
+                                                    !stackItems[i].answer.Equals(string.Empty) ? "1" : "0",
                                                     String.Format("{0:0.000}", double.Parse(stackItems[i].score)),
                                                     String.Format("{0:0.000}", double.Parse(stackItems[i].qscore)),
                                                     String.Format("{0:0.000}", double.Parse(stackItems[i].acscore)),
@@ -63,7 +64,7 @@ namespace CodeAdvisor.Supports
                 stackItem.author = questions[i]["question"]["Owner"]["Display_name"].ToString();
                 stackItem.authorImageUrl = questions[i]["question"]["Owner"]["Profile_image"].ToString();
                 stackItem.qlink = questions[i]["question"]["Link"].ToString();
-                stackItem.answer = questions[i]["answer"].Count() > 0 ? questions[i]["answer"]["Body"].ToString() : "";
+                stackItem.answer = questions[i]["answer"].Count() > 0 ? questions[i]["answer"]["Body"].ToString().Trim() : "";
                 stackItem.score = questions[i]["Scores"]["Total"].ToString();
                 stackItem.qscore = questions[i]["Scores"]["Question"].ToString();
                 stackItem.acscore = questions[i]["Scores"]["Accepted"].ToString();

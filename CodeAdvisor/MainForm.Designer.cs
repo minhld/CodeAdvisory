@@ -75,11 +75,6 @@
             this.stackList = new System.Windows.Forms.ListView();
             this.author = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.question = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.score = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.qscore = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.accscore = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.apiscore = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.userreputation = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.questionTabs = new System.Windows.Forms.TabControl();
             this.questionTabPage = new System.Windows.Forms.TabPage();
             this.questionWebView = new System.Windows.Forms.WebBrowser();
@@ -90,6 +85,12 @@
             this.toolStrip3 = new System.Windows.Forms.ToolStrip();
             this.refreshStackLinkTSBtn = new System.Windows.Forms.ToolStripButton();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.answers = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.score = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.qscore = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.accscore = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.apiscore = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.userreputation = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.toolStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -566,6 +567,7 @@
             this.stackList.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.author,
             this.question,
+            this.answers,
             this.score,
             this.qscore,
             this.accscore,
@@ -590,26 +592,6 @@
             // 
             this.question.Text = "question";
             this.question.Width = 250;
-            // 
-            // score
-            // 
-            this.score.Text = "score";
-            // 
-            // qscore
-            // 
-            this.qscore.Text = "qscore";
-            // 
-            // accscore
-            // 
-            this.accscore.Text = "accepted";
-            // 
-            // apiscore
-            // 
-            this.apiscore.Text = "api";
-            // 
-            // userreputation
-            // 
-            this.userreputation.Text = "user-rep";
             // 
             // questionTabs
             // 
@@ -707,6 +689,30 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             this.openFileDialog1.Filter = "Java files (*.java)|*.java|All files (*.*)|*.*";
+            // 
+            // answers
+            // 
+            this.answers.Text = "answers";
+            // 
+            // score
+            // 
+            this.score.Text = "score";
+            // 
+            // qscore
+            // 
+            this.qscore.Text = "q-score";
+            // 
+            // accscore
+            // 
+            this.accscore.Text = "accepted";
+            // 
+            // apiscore
+            // 
+            this.apiscore.Text = "api";
+            // 
+            // userreputation
+            // 
+            this.userreputation.Text = "user-rep";
             // 
             // MainForm
             // 
@@ -812,7 +818,6 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
         private System.Windows.Forms.ColumnHeader author;
         private System.Windows.Forms.ColumnHeader question;
-        private System.Windows.Forms.ColumnHeader score;
         private System.Windows.Forms.WebBrowser questionWebView;
         private System.Windows.Forms.ToolStrip toolStrip3;
         private System.Windows.Forms.TabPage requestTabPage;
@@ -824,11 +829,13 @@
         private System.Windows.Forms.WebBrowser linkWebView;
         private System.Windows.Forms.ToolStripButton refreshStackLinkTSBtn;
         private System.Windows.Forms.RichTextBox requestText;
-        private System.Windows.Forms.ColumnHeader qscore;
-        private System.Windows.Forms.ColumnHeader accscore;
-        private System.Windows.Forms.ColumnHeader apiscore;
-        private System.Windows.Forms.ColumnHeader userreputation;
         private System.Windows.Forms.ToolStripButton checkServerTSBtn;
+        private System.Windows.Forms.ColumnHeader answers;
+        private System.Windows.Forms.ColumnHeader userreputation;
+        private System.Windows.Forms.ColumnHeader apiscore;
+        private System.Windows.Forms.ColumnHeader accscore;
+        private System.Windows.Forms.ColumnHeader qscore;
+        private System.Windows.Forms.ColumnHeader score;
     }
 }
 
