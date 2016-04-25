@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using Newtonsoft.Json;
 
 namespace CodeAdvisor.Supports
 {
@@ -10,13 +11,36 @@ namespace CodeAdvisor.Supports
     {
         public static string parseException(string exMsg)
         {
+            string exceptions = "", exceptionMessage = "";
+            List<string> functionList = new List<string>();
+
             string[] exMsgLines = exMsg.Split('\n');
+            string funcName = "";
             for (int i = 0; i < exMsgLines.Length; i++)
             {
-                if (exMsgLines.Equals(string.Empty)) continue;
+                if (exMsgLines[i].Equals(string.Empty)) continue;
 
+                // to simplify, let's consider the first line of exception is expression
+                // the other lines only contain stack functions
+                if (i == 0)
+                {
+                    string[] exs = checkException(exMsgLines[i]);
+                    exceptions = exs[0];
+                    exceptionMessage = exs[1];
+                }
+                else
+                {
+                    funcName = checkFunctions(exMsgLines[i]);
+                    if (!funcName.Equals(string.Empty))
+                    {
+                        functionList.Add(funcName);
+                    }
+                }
             }
-            return "";
+
+            RequestJSON req = new RequestJSON(exceptions, exceptionMessage, functionList.ToArray());
+
+            return JsonConvert.SerializeObject(req);
         }
 
         public static string[] checkException(string exLine)

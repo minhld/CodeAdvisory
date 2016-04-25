@@ -152,7 +152,7 @@ namespace CodeAdvisor
 
         private void lookupTSBtn_Click(object sender, EventArgs e)
         {
-            ExceptionUtils.parseException(errorText.Text);
+            string reqJson = ExceptionUtils.parseException(errorText.Text);
         }
 
         private void deleteTSBtn_Click(object sender, EventArgs e)
