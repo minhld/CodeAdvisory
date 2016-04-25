@@ -48,6 +48,12 @@ namespace CodeAdvisor.Supports
             int lastOffs = javaFilePath.LastIndexOf(".java");
             string javaClassPath = javaFilePath.Substring(0, lastOffs) + ".class";
 
+            // delete the class file if it exists
+            if (File.Exists(javaClassPath))
+            {
+                File.Delete(javaClassPath);
+            }
+
             Process process = new Process();
             process.StartInfo.FileName = javacPath;
             process.StartInfo.Arguments = javaFilePath;

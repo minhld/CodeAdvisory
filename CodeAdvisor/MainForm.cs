@@ -17,9 +17,9 @@ namespace CodeAdvisor
     {
         #region Variables
 
-        const int TAB_CONSOLE_IDX = 1;
-        const int TAB_ERROR_IDX = 2;
-        const int TAB_REQUEST_IDX = 3;
+        const int TAB_CONSOLE_IDX = 0;
+        const int TAB_ERROR_IDX = 1;
+        const int TAB_REQUEST_IDX = 2;
 
         #endregion
 
@@ -82,7 +82,7 @@ namespace CodeAdvisor
             string javaFilePath = (string)editorTab.SelectedTab.Tag;
             consoleText.Text = string.Empty;
             errorText.Text = string.Empty;
-
+            
             string javaClassPath = JavaUtils.compile(javaFilePath);
             if (File.Exists(javaClassPath))
             {
