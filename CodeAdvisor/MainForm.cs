@@ -45,8 +45,6 @@ namespace CodeAdvisor
             {
                 MessageBox.Show(this, "JDK path is missing", Properties.Resources.APP_NAME, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
-
-
         }
         
         private void exitTSBtn_Click(object sender, EventArgs e)
@@ -166,11 +164,8 @@ namespace CodeAdvisor
             StackItem stackItem = (StackItem)selectedItem.Tag;
             questionWebView.DocumentText = stackItem.question;
             answerWebView.DocumentText = stackItem.answer;
+            answerTabPage.Text = Properties.Resources.TAB_ANSWER + (stackItem.answer.Trim().Equals(string.Empty) ? " (0)" : " (1)");
             linkWebView.Url = new Uri(stackItem.qlink);
-            if (stackItem.answer.Trim().Equals(string.Empty))
-            {
-
-            }
         }
 
         #endregion
@@ -257,6 +252,7 @@ namespace CodeAdvisor
                 return;
             }
             StackUtils.drawListItems(stackList);
+            requestText.Text = (string)e.Result;
         }
 
         private void GetStackWorker_DoWork(object sender, DoWorkEventArgs e)
@@ -264,6 +260,7 @@ namespace CodeAdvisor
             string reqJson = ExceptionUtils.parseException(e.Argument.ToString());
             string resp = ExceptionUtils.sendPost(Properties.Resources.CONTACT_SERVER, reqJson);
             StackUtils.getStackItems(resp);
+            e.Result = reqJson;
         }
 
         #endregion

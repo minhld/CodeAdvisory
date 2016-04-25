@@ -27,10 +27,11 @@ namespace CodeAdvisor.Supports
 
         public static void drawListItems(ListView parent)
         {
+            parent.Items.Clear();
             ListViewItem listItem = null;
             for (int i = 0; i < stackItems.Count(); i++)
             {
-                listItem = new ListViewItem(new [] { stackItems[i].author, stackItems[i].title, stackItems[i].score });
+                listItem = new ListViewItem(new [] { stackItems[i].author, stackItems[i].title, String.Format("{0:0.000}", double.Parse(stackItems[i].score)) });
                 listItem.Tag = stackItems[i];
                 parent.Items.Add(listItem);
             }

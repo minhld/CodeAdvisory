@@ -171,6 +171,16 @@ namespace CodeAdvisor.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap gtk_refresh {
+            get {
+                object obj = ResourceManager.GetObject("gtk_refresh", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap java_1 {
             get {
                 object obj = ResourceManager.GetObject("java_1", resourceCulture);
@@ -214,6 +224,24 @@ namespace CodeAdvisor.Properties {
             get {
                 object obj = ResourceManager.GetObject("start_here_gnome_blue", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Answers.
+        /// </summary>
+        internal static string TAB_ANSWER {
+            get {
+                return ResourceManager.GetString("TAB_ANSWER", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Link.
+        /// </summary>
+        internal static string TAB_LINK {
+            get {
+                return ResourceManager.GetString("TAB_LINK", resourceCulture);
             }
         }
         
