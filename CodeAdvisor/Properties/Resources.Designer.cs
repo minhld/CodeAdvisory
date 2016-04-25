@@ -80,6 +80,15 @@ namespace CodeAdvisor.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to http://localhost:9000/search.
+        /// </summary>
+        internal static string CONTACT_SERVER {
+            get {
+                return ResourceManager.GetString("CONTACT_SERVER", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap deletered {

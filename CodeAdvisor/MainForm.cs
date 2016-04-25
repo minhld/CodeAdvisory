@@ -152,7 +152,23 @@ namespace CodeAdvisor
 
         private void lookupTSBtn_Click(object sender, EventArgs e)
         {
-            string reqJson = ExceptionUtils.parseException(errorText.Text);
+            BackgroundWorker getStackWorker = new BackgroundWorker();
+            getStackWorker.DoWork += GetStackWorker_DoWork;
+            getStackWorker.RunWorkerCompleted += GetStackWorker_RunWorkerCompleted;
+            getStackWorker.RunWorkerAsync(errorText.Text);
+            
+        }
+
+        private void GetStackWorker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            StackUtils.drawListItems(stackList);
+        }
+
+        private void GetStackWorker_DoWork(object sender, DoWorkEventArgs e)
+        {
+            string reqJson = ExceptionUtils.parseException(e.Argument.ToString());
+            string resp = ExceptionUtils.sendPost(Properties.Resources.CONTACT_SERVER, reqJson);
+            StackUtils.getStackItems(resp);
         }
 
         private void deleteTSBtn_Click(object sender, EventArgs e)

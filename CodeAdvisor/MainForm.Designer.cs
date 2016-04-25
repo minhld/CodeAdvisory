@@ -33,8 +33,9 @@
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.exitTSBtn = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.saveFileTSBtn = new System.Windows.Forms.ToolStripButton();
             this.loadFileTSBtn = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
+            this.saveFileTSBtn = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.compileTSBtn = new System.Windows.Forms.ToolStripButton();
             this.comNRunTSBtn = new System.Windows.Forms.ToolStripButton();
@@ -70,7 +71,9 @@
             this.splitContainer4 = new System.Windows.Forms.SplitContainer();
             this.stackList = new System.Windows.Forms.ListView();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
+            this.author = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.question = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.score = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.toolStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -102,6 +105,7 @@
             // 
             // toolStrip1
             // 
+            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.exitTSBtn,
             this.toolStripSeparator1,
@@ -116,7 +120,7 @@
             this.aboutTSBtn});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1134, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(1512, 27);
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -125,44 +129,49 @@
             this.exitTSBtn.Image = global::CodeAdvisor.Properties.Resources.gnome_panel_force_quit;
             this.exitTSBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.exitTSBtn.Name = "exitTSBtn";
-            this.exitTSBtn.Size = new System.Drawing.Size(45, 22);
+            this.exitTSBtn.Size = new System.Drawing.Size(57, 24);
             this.exitTSBtn.Text = "Exit";
             this.exitTSBtn.Click += new System.EventHandler(this.exitTSBtn_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
-            // 
-            // saveFileTSBtn
-            // 
-            this.saveFileTSBtn.Image = global::CodeAdvisor.Properties.Resources.save;
-            this.saveFileTSBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.saveFileTSBtn.Name = "saveFileTSBtn";
-            this.saveFileTSBtn.Size = new System.Drawing.Size(51, 22);
-            this.saveFileTSBtn.Text = "Save";
-            this.saveFileTSBtn.Click += new System.EventHandler(this.saveFileTSBtn_Click);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 27);
             // 
             // loadFileTSBtn
             // 
             this.loadFileTSBtn.Image = global::CodeAdvisor.Properties.Resources.generic_folder;
             this.loadFileTSBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.loadFileTSBtn.Name = "loadFileTSBtn";
-            this.loadFileTSBtn.Size = new System.Drawing.Size(74, 22);
+            this.loadFileTSBtn.Size = new System.Drawing.Size(93, 24);
             this.loadFileTSBtn.Text = "Load File";
             this.loadFileTSBtn.Click += new System.EventHandler(this.loadFileTSBtn_Click);
+            // 
+            // toolStripSeparator5
+            // 
+            this.toolStripSeparator5.Name = "toolStripSeparator5";
+            this.toolStripSeparator5.Size = new System.Drawing.Size(6, 27);
+            // 
+            // saveFileTSBtn
+            // 
+            this.saveFileTSBtn.Image = global::CodeAdvisor.Properties.Resources.save;
+            this.saveFileTSBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.saveFileTSBtn.Name = "saveFileTSBtn";
+            this.saveFileTSBtn.Size = new System.Drawing.Size(64, 24);
+            this.saveFileTSBtn.Text = "Save";
+            this.saveFileTSBtn.Click += new System.EventHandler(this.saveFileTSBtn_Click);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 25);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 27);
             // 
             // compileTSBtn
             // 
             this.compileTSBtn.Image = global::CodeAdvisor.Properties.Resources.exec;
             this.compileTSBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.compileTSBtn.Name = "compileTSBtn";
-            this.compileTSBtn.Size = new System.Drawing.Size(72, 22);
+            this.compileTSBtn.Size = new System.Drawing.Size(89, 24);
             this.compileTSBtn.Text = "Compile";
             this.compileTSBtn.Click += new System.EventHandler(this.compileTSBtn_Click);
             // 
@@ -171,21 +180,21 @@
             this.comNRunTSBtn.Image = global::CodeAdvisor.Properties.Resources.start_here_gnome_blue;
             this.comNRunTSBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.comNRunTSBtn.Name = "comNRunTSBtn";
-            this.comNRunTSBtn.Size = new System.Drawing.Size(48, 22);
+            this.comNRunTSBtn.Size = new System.Drawing.Size(58, 24);
             this.comNRunTSBtn.Text = "Run";
             this.comNRunTSBtn.Click += new System.EventHandler(this.comNRunTSBtn_Click);
             // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 25);
+            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 27);
             // 
             // settingTSBtn
             // 
             this.settingTSBtn.Image = global::CodeAdvisor.Properties.Resources.advancedsettings;
             this.settingTSBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.settingTSBtn.Name = "settingTSBtn";
-            this.settingTSBtn.Size = new System.Drawing.Size(69, 22);
+            this.settingTSBtn.Size = new System.Drawing.Size(86, 24);
             this.settingTSBtn.Text = "Settings";
             // 
             // aboutTSBtn
@@ -193,7 +202,7 @@
             this.aboutTSBtn.Image = global::CodeAdvisor.Properties.Resources.dialog_question;
             this.aboutTSBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.aboutTSBtn.Name = "aboutTSBtn";
-            this.aboutTSBtn.Size = new System.Drawing.Size(76, 22);
+            this.aboutTSBtn.Size = new System.Drawing.Size(94, 24);
             this.aboutTSBtn.Text = "About Us";
             this.aboutTSBtn.Click += new System.EventHandler(this.aboutTSBtn_Click);
             // 
@@ -203,16 +212,17 @@
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.loadingProg,
             this.statusText});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 639);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 792);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(1134, 22);
+            this.statusStrip1.Padding = new System.Windows.Forms.Padding(1, 0, 19, 0);
+            this.statusStrip1.Size = new System.Drawing.Size(1512, 22);
             this.statusStrip1.TabIndex = 1;
             this.statusStrip1.Text = "statusStrip1";
             // 
             // loadingProg
             // 
             this.loadingProg.Name = "loadingProg";
-            this.loadingProg.Size = new System.Drawing.Size(200, 16);
+            this.loadingProg.Size = new System.Drawing.Size(267, 20);
             this.loadingProg.Visible = false;
             // 
             // statusText
@@ -223,7 +233,8 @@
             // splitContainer1
             // 
             this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer1.Location = new System.Drawing.Point(0, 25);
+            this.splitContainer1.Location = new System.Drawing.Point(0, 27);
+            this.splitContainer1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.splitContainer1.Name = "splitContainer1";
             // 
             // splitContainer1.Panel1
@@ -233,14 +244,16 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.splitContainer2);
-            this.splitContainer1.Size = new System.Drawing.Size(1134, 614);
-            this.splitContainer1.SplitterDistance = 171;
+            this.splitContainer1.Size = new System.Drawing.Size(1512, 765);
+            this.splitContainer1.SplitterDistance = 228;
+            this.splitContainer1.SplitterWidth = 5;
             this.splitContainer1.TabIndex = 2;
             // 
             // splitContainer5
             // 
             this.splitContainer5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer5.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.splitContainer5.Name = "splitContainer5";
             this.splitContainer5.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
@@ -251,8 +264,9 @@
             // splitContainer5.Panel2
             // 
             this.splitContainer5.Panel2.Controls.Add(this.fileInfoText);
-            this.splitContainer5.Size = new System.Drawing.Size(171, 614);
-            this.splitContainer5.SplitterDistance = 301;
+            this.splitContainer5.Size = new System.Drawing.Size(228, 765);
+            this.splitContainer5.SplitterDistance = 375;
+            this.splitContainer5.SplitterWidth = 5;
             this.splitContainer5.TabIndex = 0;
             // 
             // fileList
@@ -261,9 +275,10 @@
             this.fileList.ContextMenuStrip = this.contextMenuStrip1;
             this.fileList.Dock = System.Windows.Forms.DockStyle.Fill;
             this.fileList.Location = new System.Drawing.Point(0, 0);
+            this.fileList.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.fileList.MultiSelect = false;
             this.fileList.Name = "fileList";
-            this.fileList.Size = new System.Drawing.Size(171, 301);
+            this.fileList.Size = new System.Drawing.Size(228, 375);
             this.fileList.SmallImageList = this.mainImageList;
             this.fileList.TabIndex = 1;
             this.fileList.UseCompatibleStateImageBehavior = false;
@@ -277,14 +292,14 @@
             this.openToolStripMenuItem,
             this.deleteToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(112, 56);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(129, 56);
             // 
             // openToolStripMenuItem
             // 
             this.openToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.openToolStripMenuItem.Image = global::CodeAdvisor.Properties.Resources.folder_yellow_open;
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(111, 26);
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(128, 26);
             this.openToolStripMenuItem.Text = "Open";
             this.openToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
             // 
@@ -292,7 +307,7 @@
             // 
             this.deleteToolStripMenuItem.Image = global::CodeAdvisor.Properties.Resources.deletered;
             this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
-            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(111, 26);
+            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(128, 26);
             this.deleteToolStripMenuItem.Text = "Delete";
             this.deleteToolStripMenuItem.Click += new System.EventHandler(this.deleteToolStripMenuItem_Click);
             // 
@@ -308,8 +323,9 @@
             this.fileInfoText.Dock = System.Windows.Forms.DockStyle.Fill;
             this.fileInfoText.Font = new System.Drawing.Font("Courier New", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.fileInfoText.Location = new System.Drawing.Point(0, 0);
+            this.fileInfoText.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.fileInfoText.Name = "fileInfoText";
-            this.fileInfoText.Size = new System.Drawing.Size(171, 309);
+            this.fileInfoText.Size = new System.Drawing.Size(228, 385);
             this.fileInfoText.TabIndex = 2;
             this.fileInfoText.Text = "";
             // 
@@ -317,6 +333,7 @@
             // 
             this.splitContainer2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer2.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.splitContainer2.Name = "splitContainer2";
             // 
             // splitContainer2.Panel1
@@ -326,14 +343,16 @@
             // splitContainer2.Panel2
             // 
             this.splitContainer2.Panel2.Controls.Add(this.splitContainer4);
-            this.splitContainer2.Size = new System.Drawing.Size(959, 614);
-            this.splitContainer2.SplitterDistance = 587;
+            this.splitContainer2.Size = new System.Drawing.Size(1279, 765);
+            this.splitContainer2.SplitterDistance = 782;
+            this.splitContainer2.SplitterWidth = 5;
             this.splitContainer2.TabIndex = 0;
             // 
             // splitContainer3
             // 
             this.splitContainer3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer3.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.splitContainer3.Name = "splitContainer3";
             this.splitContainer3.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
@@ -345,8 +364,9 @@
             // 
             this.splitContainer3.Panel2.Controls.Add(this.consoleTabs);
             this.splitContainer3.Panel2.Controls.Add(this.toolStrip2);
-            this.splitContainer3.Size = new System.Drawing.Size(587, 614);
-            this.splitContainer3.SplitterDistance = 389;
+            this.splitContainer3.Size = new System.Drawing.Size(782, 765);
+            this.splitContainer3.SplitterDistance = 484;
+            this.splitContainer3.SplitterWidth = 5;
             this.splitContainer3.TabIndex = 0;
             // 
             // editorTab
@@ -354,9 +374,10 @@
             this.editorTab.ContextMenuStrip = this.contextMenuStrip2;
             this.editorTab.Dock = System.Windows.Forms.DockStyle.Fill;
             this.editorTab.Location = new System.Drawing.Point(0, 0);
+            this.editorTab.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.editorTab.Name = "editorTab";
             this.editorTab.SelectedIndex = 0;
-            this.editorTab.Size = new System.Drawing.Size(587, 389);
+            this.editorTab.Size = new System.Drawing.Size(782, 484);
             this.editorTab.TabIndex = 0;
             // 
             // contextMenuStrip2
@@ -366,21 +387,21 @@
             this.toolStripMenuItem1,
             this.closeAllToolStripMenuItem});
             this.contextMenuStrip2.Name = "contextMenuStrip1";
-            this.contextMenuStrip2.Size = new System.Drawing.Size(130, 56);
+            this.contextMenuStrip2.Size = new System.Drawing.Size(148, 56);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolStripMenuItem1.Image = global::CodeAdvisor.Properties.Resources.no;
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(129, 26);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(147, 26);
             this.toolStripMenuItem1.Text = "Close Tab";
             this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
             // 
             // closeAllToolStripMenuItem
             // 
             this.closeAllToolStripMenuItem.Name = "closeAllToolStripMenuItem";
-            this.closeAllToolStripMenuItem.Size = new System.Drawing.Size(129, 26);
+            this.closeAllToolStripMenuItem.Size = new System.Drawing.Size(147, 26);
             this.closeAllToolStripMenuItem.Text = "Close All";
             this.closeAllToolStripMenuItem.Click += new System.EventHandler(this.closeAllToolStripMenuItem_Click);
             // 
@@ -390,18 +411,20 @@
             this.consoleTabs.Controls.Add(this.errorTabPage);
             this.consoleTabs.Dock = System.Windows.Forms.DockStyle.Fill;
             this.consoleTabs.Location = new System.Drawing.Point(0, 27);
+            this.consoleTabs.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.consoleTabs.Name = "consoleTabs";
             this.consoleTabs.SelectedIndex = 0;
-            this.consoleTabs.Size = new System.Drawing.Size(587, 194);
+            this.consoleTabs.Size = new System.Drawing.Size(782, 249);
             this.consoleTabs.TabIndex = 1;
             // 
             // outputTabPage
             // 
             this.outputTabPage.Controls.Add(this.consoleText);
-            this.outputTabPage.Location = new System.Drawing.Point(4, 22);
+            this.outputTabPage.Location = new System.Drawing.Point(4, 25);
+            this.outputTabPage.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.outputTabPage.Name = "outputTabPage";
-            this.outputTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.outputTabPage.Size = new System.Drawing.Size(579, 168);
+            this.outputTabPage.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.outputTabPage.Size = new System.Drawing.Size(774, 220);
             this.outputTabPage.TabIndex = 0;
             this.outputTabPage.Text = "Output";
             this.outputTabPage.UseVisualStyleBackColor = true;
@@ -411,19 +434,21 @@
             this.consoleText.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.consoleText.Dock = System.Windows.Forms.DockStyle.Fill;
             this.consoleText.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.consoleText.Location = new System.Drawing.Point(3, 3);
+            this.consoleText.Location = new System.Drawing.Point(4, 4);
+            this.consoleText.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.consoleText.Name = "consoleText";
-            this.consoleText.Size = new System.Drawing.Size(573, 162);
+            this.consoleText.Size = new System.Drawing.Size(766, 212);
             this.consoleText.TabIndex = 1;
             this.consoleText.Text = "";
             // 
             // errorTabPage
             // 
             this.errorTabPage.Controls.Add(this.errorText);
-            this.errorTabPage.Location = new System.Drawing.Point(4, 22);
+            this.errorTabPage.Location = new System.Drawing.Point(4, 25);
+            this.errorTabPage.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.errorTabPage.Name = "errorTabPage";
-            this.errorTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.errorTabPage.Size = new System.Drawing.Size(579, 168);
+            this.errorTabPage.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.errorTabPage.Size = new System.Drawing.Size(775, 210);
             this.errorTabPage.TabIndex = 1;
             this.errorTabPage.Text = "Error";
             this.errorTabPage.UseVisualStyleBackColor = true;
@@ -434,9 +459,10 @@
             this.errorText.Dock = System.Windows.Forms.DockStyle.Fill;
             this.errorText.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.errorText.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.errorText.Location = new System.Drawing.Point(3, 3);
+            this.errorText.Location = new System.Drawing.Point(4, 4);
+            this.errorText.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.errorText.Name = "errorText";
-            this.errorText.Size = new System.Drawing.Size(573, 162);
+            this.errorText.Size = new System.Drawing.Size(767, 202);
             this.errorText.TabIndex = 2;
             this.errorText.Text = "";
             // 
@@ -449,7 +475,7 @@
             this.deleteTSBtn});
             this.toolStrip2.Location = new System.Drawing.Point(0, 0);
             this.toolStrip2.Name = "toolStrip2";
-            this.toolStrip2.Size = new System.Drawing.Size(587, 27);
+            this.toolStrip2.Size = new System.Drawing.Size(782, 27);
             this.toolStrip2.TabIndex = 0;
             this.toolStrip2.Text = "toolStrip2";
             // 
@@ -458,7 +484,7 @@
             this.lookupTSBtn.Image = global::CodeAdvisor.Properties.Resources.find;
             this.lookupTSBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.lookupTSBtn.Name = "lookupTSBtn";
-            this.lookupTSBtn.Size = new System.Drawing.Size(75, 24);
+            this.lookupTSBtn.Size = new System.Drawing.Size(88, 24);
             this.lookupTSBtn.Text = "Look Up";
             this.lookupTSBtn.Click += new System.EventHandler(this.lookupTSBtn_Click);
             // 
@@ -472,7 +498,7 @@
             this.deleteTSBtn.Image = global::CodeAdvisor.Properties.Resources.edit_clear;
             this.deleteTSBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.deleteTSBtn.Name = "deleteTSBtn";
-            this.deleteTSBtn.Size = new System.Drawing.Size(58, 24);
+            this.deleteTSBtn.Size = new System.Drawing.Size(67, 24);
             this.deleteTSBtn.Text = "Clear";
             this.deleteTSBtn.Click += new System.EventHandler(this.deleteTSBtn_Click);
             // 
@@ -480,47 +506,65 @@
             // 
             this.splitContainer4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer4.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.splitContainer4.Name = "splitContainer4";
             this.splitContainer4.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
             // splitContainer4.Panel1
             // 
             this.splitContainer4.Panel1.Controls.Add(this.stackList);
-            this.splitContainer4.Size = new System.Drawing.Size(368, 614);
-            this.splitContainer4.SplitterDistance = 252;
+            this.splitContainer4.Size = new System.Drawing.Size(492, 765);
+            this.splitContainer4.SplitterDistance = 313;
+            this.splitContainer4.SplitterWidth = 5;
             this.splitContainer4.TabIndex = 0;
             // 
             // stackList
             // 
             this.stackList.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.stackList.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.author,
+            this.question,
+            this.score});
             this.stackList.Dock = System.Windows.Forms.DockStyle.Fill;
             this.stackList.Location = new System.Drawing.Point(0, 0);
-            this.stackList.MinimumSize = new System.Drawing.Size(308, 292);
+            this.stackList.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.stackList.MinimumSize = new System.Drawing.Size(411, 359);
             this.stackList.Name = "stackList";
-            this.stackList.Size = new System.Drawing.Size(368, 292);
+            this.stackList.Size = new System.Drawing.Size(492, 359);
             this.stackList.TabIndex = 1;
             this.stackList.UseCompatibleStateImageBehavior = false;
+            this.stackList.View = System.Windows.Forms.View.Details;
             // 
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             this.openFileDialog1.Filter = "Java files (*.java)|*.java|All files (*.*)|*.*";
             // 
-            // toolStripSeparator5
+            // author
             // 
-            this.toolStripSeparator5.Name = "toolStripSeparator5";
-            this.toolStripSeparator5.Size = new System.Drawing.Size(6, 25);
+            this.author.Text = "author";
+            this.author.Width = 100;
+            // 
+            // question
+            // 
+            this.question.Text = "question";
+            this.question.Width = 200;
+            // 
+            // score
+            // 
+            this.score.Text = "score";
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1134, 661);
+            this.ClientSize = new System.Drawing.Size(1512, 814);
             this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.toolStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MinimumSize = new System.Drawing.Size(1150, 700);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.MinimumSize = new System.Drawing.Size(1527, 851);
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Code Avisor v1.0";
@@ -604,6 +648,9 @@
         private System.Windows.Forms.RichTextBox fileInfoText;
         private System.Windows.Forms.ToolStripButton saveFileTSBtn;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
+        private System.Windows.Forms.ColumnHeader author;
+        private System.Windows.Forms.ColumnHeader question;
+        private System.Windows.Forms.ColumnHeader score;
     }
 }
 
