@@ -15,5 +15,9 @@ namespace CodeAdvisor.Supports
         public string qlink;
         public string answer;
         public string score;
+        public string qscore;
+        public string acscore;
+        public string apiscore;
+        public string urscore;
     }
 }

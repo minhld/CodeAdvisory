@@ -85,6 +85,10 @@
             this.refreshStackLinkTSBtn = new System.Windows.Forms.ToolStripButton();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.requestText = new System.Windows.Forms.RichTextBox();
+            this.qscore = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.accscore = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.apiscore = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.userreputation = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.toolStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -540,7 +544,11 @@
             this.stackList.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.author,
             this.question,
-            this.score});
+            this.score,
+            this.qscore,
+            this.accscore,
+            this.apiscore,
+            this.userreputation});
             this.stackList.Dock = System.Windows.Forms.DockStyle.Fill;
             this.stackList.FullRowSelect = true;
             this.stackList.Location = new System.Drawing.Point(0, 0);
@@ -673,6 +681,22 @@
             this.requestText.TabIndex = 2;
             this.requestText.Text = "";
             // 
+            // qscore
+            // 
+            this.qscore.Text = "qscore";
+            // 
+            // accscore
+            // 
+            this.accscore.Text = "accepted";
+            // 
+            // apiscore
+            // 
+            this.apiscore.Text = "api";
+            // 
+            // userreputation
+            // 
+            this.userreputation.Text = "user-rep";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -789,6 +813,10 @@
         private System.Windows.Forms.WebBrowser linkWebView;
         private System.Windows.Forms.ToolStripButton refreshStackLinkTSBtn;
         private System.Windows.Forms.RichTextBox requestText;
+        private System.Windows.Forms.ColumnHeader qscore;
+        private System.Windows.Forms.ColumnHeader accscore;
+        private System.Windows.Forms.ColumnHeader apiscore;
+        private System.Windows.Forms.ColumnHeader userreputation;
     }
 }
 

@@ -31,7 +31,13 @@ namespace CodeAdvisor.Supports
             ListViewItem listItem = null;
             for (int i = 0; i < stackItems.Count(); i++)
             {
-                listItem = new ListViewItem(new [] { stackItems[i].author, stackItems[i].title, String.Format("{0:0.000}", double.Parse(stackItems[i].score)) });
+                listItem = new ListViewItem(new [] { stackItems[i].author,
+                                                    stackItems[i].title,
+                                                    String.Format("{0:0.000}", double.Parse(stackItems[i].score)),
+                                                    String.Format("{0:0.000}", double.Parse(stackItems[i].qscore)),
+                                                    String.Format("{0:0.000}", double.Parse(stackItems[i].acscore)),
+                                                    String.Format("{0:0.000}", double.Parse(stackItems[i].apiscore)),
+                                                    String.Format("{0:0.000}", double.Parse(stackItems[i].urscore))});
                 listItem.Tag = stackItems[i];
                 parent.Items.Add(listItem);
             }
@@ -59,6 +65,10 @@ namespace CodeAdvisor.Supports
                 stackItem.qlink = questions[i]["question"]["Link"].ToString();
                 stackItem.answer = questions[i]["answer"].Count() > 0 ? questions[i]["answer"]["Body"].ToString() : "";
                 stackItem.score = questions[i]["Scores"]["Total"].ToString();
+                stackItem.qscore = questions[i]["Scores"]["Question"].ToString();
+                stackItem.acscore = questions[i]["Scores"]["Accepted"].ToString();
+                stackItem.apiscore = questions[i]["Scores"]["API"].ToString();
+                stackItem.urscore = questions[i]["Scores"]["UserReputation"].ToString();
 
                 stackItems.Add(stackItem);
             }
